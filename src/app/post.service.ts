@@ -38,19 +38,7 @@ export class PostService {
   }
 
   getAllPosts():Observable<BlogPost[]> {
-    // return this.http.get<BlogPost[]> (`https://radiant-sea-73398.herokuapp.com/api/posts?page=1&perPage=${Number.MAX_SAFE_INTEGER}`);
-
-    const perPage = Number.MAX_SAFE_INTEGER.toString();
-
-    let params = {
-      page: "1",
-      perPage: perPage,
-    };
-
-    return this.http.get<BlogPost[]>(
-      `https://radiant-sea-73398.herokuapp.com/api/posts`,
-      { params }
-    );
+    return this.http.get<BlogPost[]> (`https://radiant-sea-73398.herokuapp.com/api/posts?page=1&perPage=${Number.MAX_SAFE_INTEGER}`);
   }
 
   newPost(data: BlogPost): Observable<any> {
